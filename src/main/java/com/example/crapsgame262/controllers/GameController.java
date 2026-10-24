@@ -1,6 +1,6 @@
 package com.example.crapsgame262.controllers;
 
-import com.example.crapsgame262.models.Dice;
+import com.example.crapsgame262.models.Game;
 import com.example.crapsgame262.models.Player;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -12,6 +12,8 @@ public class GameController {
 
     private Player currentPlayer;
 
+    private final Game game = new Game();
+
     @FXML
     private ImageView dice1ImageView;
 
@@ -20,6 +22,18 @@ public class GameController {
 
     @FXML
     private Label nicknameLabel;
+
+    @FXML
+    private Label rollLabel;
+
+    @FXML
+    private Label pointLabel;
+
+    @FXML
+    private Label gamesWonLabel;
+
+    @FXML
+    private Label gamesLostLabel;
 
     public Player getCurrentPlayer() {
         return currentPlayer;
@@ -32,26 +46,27 @@ public class GameController {
 
     @FXML
     void onMouseClickedDropButton(MouseEvent event) {
-        Dice dice1 = new Dice();
-        dice1.roll();
+        game.roll();
 
         dice1ImageView.setImage(
                 new Image(
                         getClass().getResourceAsStream(
-                                dice1.getImagePath()
+                                game.getDice1().getImagePath()
                         )
                 )
         );
-
-        Dice dice2 = new Dice();
-        dice2.roll();
 
         dice2ImageView.setImage(
                 new Image(
                         getClass().getResourceAsStream(
-                                dice2.getImagePath()
+                                game.getDice2().getImagePath()
                         )
                 )
         );
+
+        rollLabel.setText(String.valueOf(game.getLastRoll()));
+        pointLabel.setText(game.getPoint() == 0 ? "-" : String.valueOf(game.getPoint()));
+        gamesWonLabel.setText(String.valueOf(game.getGamesWon()));
+        gamesLostLabel.setText(String.valueOf(game.getGamesLost()));
     }
 }
