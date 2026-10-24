@@ -1,5 +1,6 @@
 package com.example.crapsgame262.controllers;
 
+import com.example.crapsgame262.models.AlertBox;
 import com.example.crapsgame262.models.Game;
 import com.example.crapsgame262.models.Player;
 import javafx.fxml.FXML;
@@ -42,6 +43,22 @@ public class GameController {
     public void setCurrentPlayer(Player currentPlayer) {
         this.currentPlayer = currentPlayer;
         nicknameLabel.setText(this.currentPlayer.getNickname());
+    }
+
+    @FXML
+    void onMouseClickedHelpButton(MouseEvent event) {
+        new AlertBox().showAlertBox(
+                "Craps Game - Ayuda",
+                "Cómo se juega Craps",
+                "Primer tiro:\n"
+                        + "  • Si sacas 7 u 11, ganas.\n"
+                        + "  • Si sacas 2, 3 o 12 (\"Craps\"), pierdes.\n"
+                        + "  • Con cualquier otro número (4, 5, 6, 8, 9, 10) se establece el \"punto\".\n\n"
+                        + "Si hay punto, sigue lanzando:\n"
+                        + "  • Si sacas el punto otra vez antes de un 7, ganas.\n"
+                        + "  • Si sacas 7 antes del punto, pierdes.\n\n"
+                        + "Pulsa \"Lanzar\" para tirar los dados. El tiro, el punto y los juegos "
+                        + "ganados y perdidos se muestran en Resultados.");
     }
 
     @FXML

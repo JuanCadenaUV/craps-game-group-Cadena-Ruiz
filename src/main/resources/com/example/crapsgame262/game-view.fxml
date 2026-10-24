@@ -30,7 +30,7 @@
                         <Font name="System Bold" size="18.0" />
                     </font>
                 </Label>
-                <Button mnemonicParsing="false" style="-fx-background-color: BLACK; -fx-border-color: white; -fx-border-radius: 15;" text="?" textFill="WHITE">
+                <Button mnemonicParsing="false" onMouseClicked="#onMouseClickedHelpButton" style="-fx-background-color: BLACK; -fx-border-color: white; -fx-border-radius: 15;" text="?" textFill="WHITE">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
@@ -58,7 +58,7 @@
                 <Button mnemonicParsing="false" onMouseClicked="#onMouseClickedDropButton" text="Lanzar" />
             </children>
         </VBox>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="30.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
                 <Label fx:id="nicknameLabel">
                     <font>
@@ -92,7 +92,7 @@
                                 <Insets right="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label fx:id="rollLabel" style="-fx-border-color: black;" text="00" GridPane.columnIndex="1">
+                        <Label fx:id="rollLabel" alignment="CENTER" minWidth="50.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="00" GridPane.columnIndex="1">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
@@ -100,7 +100,7 @@
                                 <Insets left="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label fx:id="pointLabel" style="-fx-border-color: black;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="pointLabel" alignment="CENTER" minWidth="50.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
@@ -118,7 +118,7 @@
                                 <Insets right="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label fx:id="gamesWonLabel" style="-fx-border-color: black;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label fx:id="gamesWonLabel" alignment="CENTER" minWidth="50.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="2">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
@@ -126,7 +126,7 @@
                                 <Insets left="5.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label fx:id="gamesLostLabel" style="-fx-border-color: black;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label fx:id="gamesLostLabel" alignment="CENTER" minWidth="50.0" style="-fx-border-color: black; -fx-font-weight: bold;" text="00" GridPane.columnIndex="1" GridPane.rowIndex="3">
                             <padding>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </padding>
